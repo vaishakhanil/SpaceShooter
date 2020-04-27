@@ -11,11 +11,12 @@ let star = {
     x: Math.floor(Math.random()*700)+50,
     y: Math.floor(Math.random()*500)+50
 };
+
+
 let scores = {
     blue: 0,
     red:0
 };
-
 
 app.use(express.static(__dirname+'/dist'));
 
@@ -52,7 +53,10 @@ io.on('connection',(socket)=>{
 
     socket.on('disconnect',()=>{
         console.log('User has been disconnected');
-
+        scores = {
+            blue: 0,
+            red:0
+        };
         // To Remove a player from our players object
         delete players[socket.id];
 
