@@ -1,0 +1,4 @@
+1. Refactor the code
+2. Handle images(PNG) through Webpack 
+2.1 Assets folder into src 
+3. minimize the app.js
