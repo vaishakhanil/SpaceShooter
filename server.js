@@ -8,8 +8,8 @@ let port = process.env.PORT || 8080;
 let io = require('socket.io').listen(server);
 let players = {};
 let star = {
-    x: Math.floor(Math.random()*700),
-    y: Math.floor(Math.random()*500)
+    x: Math.floor(Math.random()*700)+50,
+    y: Math.floor(Math.random()*500)+50
 };
 
 
@@ -57,8 +57,6 @@ io.on('connection',(socket)=>{
             blue: 0,
             red:0
         };
-        star = {x:0,y:0}
-        players={x:0,y:0}
         // To Remove a player from our players object
         delete players[socket.id];
 

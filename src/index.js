@@ -99,7 +99,7 @@ function create(){
 
     this.socket.on('starLocation',(starLocation)=>{
         if(self.star) self.star.destroy();
-        self.star = self.physics.add.image(starLocation.x,starLocation.y,'star');
+        self.star = self.physics.add.image(starLocation.x,starLocation.y,'star').setScale(0.5);
         self.physics.add.overlap(self.ship,self.star,()=>{
             this.socket.emit('starCollected');
         },null,self);
@@ -160,7 +160,7 @@ function update(){
 
 function addPlayer(self,playerInfo){
     self.ship = self.physics.add.image(playerInfo.x,playerInfo.y, 'ship').setOrigin(0.5,0.5).setDisplaySize(53,40);
-    self.dot = self.physics.add.image(playerInfo.x,playerInfo.y-25,'dot').setOrigin(0.5,0.5).setDisplaySize(10,10);
+    self.dot = self.physics.add.image(playerInfo.x,playerInfo.y,'dot').setOrigin(0.5,0.5).setDisplaySize(10,10);
     if(playerInfo.team === 'blue'){
         self.dot.setTint(0x0000ff);
     }else{
