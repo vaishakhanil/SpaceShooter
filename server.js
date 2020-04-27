@@ -1,6 +1,7 @@
 let express = require('express');
 let app = express();
 let server = require('http').Server(app);
+//Port
 let port = process.env.PORT || 8080;
 
 // Adding socket.io for bidirectional communication
