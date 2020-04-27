@@ -4,8 +4,7 @@
   "description": "Creating a Space shooter game using Phaser 3, Nodejs, Express and MongoDB",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "webpack && node server.js"
+    "start": "webpack && node server.js"
   },
   "keywords": [
     "game",

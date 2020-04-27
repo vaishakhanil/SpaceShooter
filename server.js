@@ -1,6 +1,7 @@
 let express = require('express');
 let app = express();
 let server = require('http').Server(app);
+let port = process.env.PORT || 8080;
 
 // Adding socket.io for bidirectional communication
 let io = require('socket.io').listen(server);
@@ -87,6 +88,6 @@ io.on('connection',(socket)=>{
 
 
 
-server.listen(8081,()=>{
+server.listen(port,()=>{
     console.log(`Listening on ${server.address().port}`);
 });
