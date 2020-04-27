@@ -80,13 +80,23 @@ function create(){
         });
     })
 
-    this.blueScoreText = this.add.text(16,16,'',{fontSize: '32px', fill: '#0000FF'});
-    this.redScoreText = this.add.text(584, 16, '', { fontSize: '32px', fill: '#FF0000' });
+    this.blueScoreText = this.add.text(100,550,'',{fontSize: '32px', fill: '#0000FF'});
+    this.redScoreText = this.add.text(584, 550, '', { fontSize: '32px', fill: '#FF0000' });
   
     this.socket.on('scoreUpdate',(scores)=>{
-        self.blueScoreText.setText('Blue: '+scores.blue);
-        self.redScoreText.setText('Red: '+scores.red);
-    });
+        console.log(scores);
+        if(scores.red < 50 && scores.blue < 50){
+            self.blueScoreText.setText('Blue: '+ scores.blue);
+            self.redScoreText.setText('Red: '+ scores.red);
+        }else{
+            if(scores.red > 50){
+                self.redScoreText.setText('Red: Won! ');
+            }else{
+                self.blueScoreText.setText('Blue: Won!');
+            }
+        }
+        
+    }); 
 
     this.socket.on('starLocation',(starLocation)=>{
         if(self.star) self.star.destroy();
