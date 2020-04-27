@@ -6,6 +6,5 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    background: #100710 url('./assets/background/stars.png');
+    background-color: #100710;
 }
-
