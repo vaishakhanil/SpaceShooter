@@ -57,6 +57,8 @@ io.on('connection',(socket)=>{
             blue: 0,
             red:0
         };
+        star = {x:0,y:0}
+        players={x:0,y:0}
         // To Remove a player from our players object
         delete players[socket.id];
 

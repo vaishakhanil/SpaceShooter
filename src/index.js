@@ -84,7 +84,6 @@ function create(){
     this.redScoreText = this.add.text(584, 550, '', { fontSize: '32px', fill: '#FF0000' });
   
     this.socket.on('scoreUpdate',(scores)=>{
-        console.log(scores);
         if(scores.red < 1000 && scores.blue < 1000){
             self.blueScoreText.setText('Blue: '+ scores.blue);
             self.redScoreText.setText('Red: '+ scores.red);
