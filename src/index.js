@@ -85,11 +85,11 @@ function create(){
   
     this.socket.on('scoreUpdate',(scores)=>{
         console.log(scores);
-        if(scores.red < 50 && scores.blue < 50){
+        if(scores.red < 1000 && scores.blue < 1000){
             self.blueScoreText.setText('Blue: '+ scores.blue);
             self.redScoreText.setText('Red: '+ scores.red);
         }else{
-            if(scores.red > 50){
+            if(scores.red > 1000){
                 self.redScoreText.setText('Red: Won! ');
             }else{
                 self.blueScoreText.setText('Blue: Won!');

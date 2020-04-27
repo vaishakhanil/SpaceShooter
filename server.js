@@ -8,8 +8,8 @@ let port = process.env.PORT || 8080;
 let io = require('socket.io').listen(server);
 let players = {};
 let star = {
-    x: Math.floor(Math.random()*700)+50,
-    y: Math.floor(Math.random()*500)+50
+    x: Math.floor(Math.random()*700),
+    y: Math.floor(Math.random()*500)
 };
 
 
@@ -83,11 +83,11 @@ io.on('connection',(socket)=>{
                 scores.blue += 10;
                 
             }
-       
-        star.x = Math.floor(Math.random()*700)+50;
-        star.y = Math.floor(Math.random()*500)+50;
-        io.emit('starLocation',star);
         io.emit('scoreUpdate',scores);
+        star.x = Math.floor(Math.random()*700);
+        star.y = Math.floor(Math.random()*500);
+        io.emit('starLocation',star);
+       
     });
     
 });
